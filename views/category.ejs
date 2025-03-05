@@ -7,10 +7,13 @@
   </head>
   <body>
     <%- include('./partials/nav') %>
+    <title>
+      <%=category==="mains"?"Mains":category==="sides"?"Sides":"Desserts"%>
+    </title>
     <ol>
-      <h2>
+      <h1>
         <%=category==="mains"?"Mains":category==="sides"?"Sides":"Desserts"%>
-      </h2>
+      </h1>
       <% menuItems.forEach((item,index)=>{ %>
       <h3>
         <li><%=item.name%>- $<%=item.price%> <%=item.rating===5?"⭐":""%></li>
