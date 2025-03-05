@@ -6,6 +6,8 @@
     <title>Home</title>
   </head>
   <body>
+    <%- include('./partials/nav') %>
+
     <h1><%= RESTAURANT.name %></h1>
     <% let isOpen=true; %>
     <%if(isOpen){ %>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <h1>Full Menu</h1>
+    <ol>
+      <h2>Mains</h2>
+      <% RESTAURANT.menu.forEach((item,index)=>{ %>
+      <%if(item.category==="mains"){ %>
+      <h3><li><%=item.name%>- $<%=item.price%></li></h3>
+      <p><em>Rating: <%=item.rating%></em></p>
+      <p></p>
+      <p><%=item.details%></p>
+      <%}%> <%})%>
+    </ol>
+    <ol>
+      <h2>Sides</h2>
+      <% RESTAURANT.menu.forEach((item,index)=>{ %>
+      <%if(item.category==="sides"){ %>
+      <h3><li><%=item.name%>- $<%=item.price%></li></h3>
+      <p><em>Rating: <%=item.rating%></em></p>
+      <p><%=item.details%></p>
+      <%}%> <%})%>
+    </ol>
+    <ol>
+      <h2>Desserts</h2>
+      <% RESTAURANT.menu.forEach((item,index)=>{ %>
+      <%if(item.category==="desserts"){ %>
+      <h3><li><%=item.name%>- $<%=item.price%></li></h3>
+      <p><em>Rating: <%=item.rating%></em></p>
+      <p><%=item.details%></p>
+      <%}%> <%})%>
+    </ol>
+  </body>
+</html>
