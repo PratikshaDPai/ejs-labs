@@ -67,4 +67,15 @@ app.get("/menu", (req, res) => {
   });
 });
 
+app.get("/menu/:category", (req, res) => {
+  const category = String(req.params.category).toLowerCase();
+  let menuItems = RESTAURANT.menu.filter((item) => {
+    return item.category === category;
+  });
+  res.render("category.ejs", {
+    category,
+    menuItems: menuItems,
+  });
+});
+
 app.listen(3000);
